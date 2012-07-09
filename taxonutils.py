@@ -2,6 +2,10 @@
 
 import csv
 import difflib
+try:
+    from settings import FIELD_SEP
+except ImportError:
+    FIELD_SEP = '\t'
 
 
 class TaxonIndex():
@@ -15,7 +19,7 @@ class TaxonIndex():
     # Todo: does this work with Unicode files?
     # Todo: sort the genus lists
 
-    def __init__(self,csvfile,delimiter='\t'):
+    def __init__(self,csvfile,delimiter=FIELD_SEP):
         self.taxonindex = dict()
         self.genusindex = dict()
         self.idindex = dict()
