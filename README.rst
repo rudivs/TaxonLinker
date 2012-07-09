@@ -101,41 +101,47 @@ Using TaxonLinker
 
 To run TaxonLinker, you should be able to double-click the taxonlinker.py file in the `TaxonLinker` folder [1]_. This will load the program interface.
 
-:Load Dictionary: Use this button to load a different dictionary from the 
-                  default one. If there is no file called TaxonDictionary.txt
-                  in the `var` directry of `TaxonLinker`, you will have to load
-                  a dictionary before you can process any names. You can also
-                  change your dictionary while processing a batch of names. Any
-                  names processed subsequently will use the new dictionary.
+Load Dictionary: 
+    Use this button to load a different dictionary from the 
+    default one. If there is no file called TaxonDictionary.txt
+    in the `var` directry of `TaxonLinker`, you will have to load
+    a dictionary before you can process any names. You can also
+    change your dictionary while processing a batch of names. Any
+    names processed subsequently will use the new dictionary.
 
-:Load Names: Use this button to load a text file containing the names of the
-             taxa you are interested in importing. It should contain names only,
-             and should not have any headers. It is not modified in any way by
-             Taxon Linker.
+Load Names: 
+    Use this button to load a text file containing the names of the
+    taxa you are interested in importing. It should contain names only,
+    and should not have any headers. It is not modified in any way by
+    Taxon Linker.
 
-:Select correct taxon: If Taxon Linker is not sure of the match for a 
-                       particular name, it will populate this window with a list
-                       of possible matches. Within this list, synonyms will be
-                       indicated with '=', and names which are not current will
-                       be indicated by a '*' before the taxon name. If no
-                       synonomy information is available, the taxon name will
-                       be shown without any embellishments.
+Select correct taxon: 
+    If Taxon Linker is not sure of the match for a 
+    particular name, it will populate this window with a list
+    of possible matches. Within this list, synonyms will be
+    indicated with '=', and names which are not current will
+    be indicated by a '*' before the taxon name. If no
+    synonomy information is available, the taxon name will
+    be shown without any embellishments.
                        
-:Check Updated Name: If the select options shown are not correct, you can edit
-                     the name directly, and refresh the options using this
-                     button. This can be useful for gross misspellings or when
-                     the synonomy is not loaded or not up to date.
+Check Updated Name: 
+    If the select options shown are not correct, you can edit
+    the name directly, and refresh the options using this
+    button. This can be useful for gross misspellings or when
+    the synonomy is not loaded or not up to date.
 
-:Save: If the correct matching taxon is listed in the select window, you can
-       choose it by clicking on it, and then save it by pressing this button.
-       If the first option is the correct one, you can simply click the `Save`
-       button. This button will only be enabled when there is both a dictionary
-       and a list of names loaded.
+Save: 
+    If the correct matching taxon is listed in the select window, you can
+    choose it by clicking on it, and then save it by pressing this button.
+    If the first option is the correct one, you can simply click the `Save`
+    button. This button will only be enabled when there is both a dictionary
+    and a list of names loaded.
 
-:Skip: If there is no similar record in your database to the one being checked,
-       it will not show up in the list of options. You can then move on to the
-       next record using the `Skip` button. This button will only be enabled
-       when there is both a dictionary and list of names loaded.
+Skip: 
+    If there is no similar record in your database to the one being checked,
+    it will not show up in the list of options. You can then move on to the
+    next record using the `Skip` button. This button will only be enabled
+    when there is both a dictionary and list of names loaded.
 
 If you close the program before finishing the batch of names, it will save your current batch to a temporary file, and will automatically load it when Taxon Linker starts again.
 
@@ -145,29 +151,33 @@ If you close the program before finishing the batch of names, it will save your 
 Output files
 ------------
 
-:MatchedNames.txt: This is the main output file that Taxon Linker produces, and
-                   is saved in the same directory as the program executable. It
-                   contains a tab-separated list of the taxon names in the
-                   input file and either the matching names or related id in the
-                   dictionary.
+MatchedNames.txt:
+    This is the main output file that Taxon Linker produces, and
+    is saved in the same directory as the program executable. It
+    contains a tab-separated list of the taxon names in the
+    input file and either the matching names or related id in the
+    dictionary.
 
-:NotValid.txt: This file contains names which have been saved but which are not 
-               current, and do not have synonyms indicated. It is provided as a
-               convenience as these may need individual processing to integrate.
-               It is also saved in the base directory.
+NotValid.txt:
+    This file contains names which have been saved but which are not 
+    current, and do not have synonyms indicated. It is provided as a
+    convenience as these may need individual processing to integrate.
+    It is also saved in the base directory.
 
-:skipped.txt: This file, saved in the `log` directory, serves as a record of
-              names that have been skipped, either because the user pressed the
-              `Skip` button, or because the algorithm could not find a genus
-              that was a likely match. The skipped files are logged so that the
-              user can pick up any anomalies, or reprocess the list after making
-              some edits.
+skipped.txt:
+    This file, saved in the `log` directory, serves as a record of
+    names that have been skipped, either because the user pressed the
+    `Skip` button, or because the algorithm could not find a genus
+    that was a likely match. The skipped files are logged so that the
+    user can pick up any anomalies, or reprocess the list after making
+    some edits.
 
-:automatch.txt: This file contains a log of names that were matched
-                automatically by the system without user intervention. It is
-                provided for the user to pick up any false matches (although
-                this would happen rarely, if at all). It is saved in the `log`
-                directory.
+automatch.txt: 
+    This file contains a log of names that were matched
+    automatically by the system without user intervention. It is
+    provided for the user to pick up any false matches (although
+    this would happen rarely, if at all). It is saved in the `log`
+    directory.
 
 Changes and license
 -------------------
