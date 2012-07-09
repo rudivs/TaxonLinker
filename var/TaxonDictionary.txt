@@ -1,0 +1,10 @@
+taxonID	scientificName	taxonomicStatus	relatedResourceID
+14	Thalassarche chlororhynchos	valid	
+12	Thalassarche melanophrys	synonym	14
+14.2	Thalassarche bulleri	synonym	
+11.2	Thalassarche eremita		
+13	Thalassarche chrysostoma	valid	
+14.1	Thalassarche carteri	valid	
+10.2	Phoebastria immutabilis	valid	
+16	Phoebetria palpebrata	valid	
+9	Diomedea sanfordi	valid	

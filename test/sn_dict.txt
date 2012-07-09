@@ -1,0 +1,10 @@
+scientificName
+Thalassarche chlororhynchos
+Thalassarche melanophrys
+Thalassarche bulleri
+Thalassarche eremita
+Thalassarche chrysostoma
+Thalassarche carteri
+Phoebastria immutabilis
+Phoebetria palpebrata
+Diomedea sanfordi
