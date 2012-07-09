@@ -1,31 +1,31 @@
-TaxonLinker
+Taxon Linker
 ===========
 
-TaxonLinker is a simple tool that addresses the problem of integrating biological information from different sources using the scientific name as the linking code. It has been implemented in Python, using Tkinter for the interface, and will therefore work on any computer with a standard Python installation.
+Taxon Linker is a simple tool that addresses the problem of integrating biological information from different sources using the scientific name as the linking code. It has been implemented in Python, using Tkinter for the interface, and will therefore work on any computer with a standard Python installation.
 
-TaxonLinker addresses two common problems associated with biological data integration. Firstly, data has often been entered by hand, and many records will not match because of spelling or formatting differences. By making use of Python's difflib library, TaxonLinker can match taxa despite differences in spelling. In the case of very minor differences, the match is automatic. If the difference is more substantial, the user is provided with a list of most likely matches to choose from.
+Taxon Linker addresses two common problems associated with biological data integration. Firstly, data has often been entered by hand, and many records will not match because of spelling or formatting differences. By making use of Python's difflib library, TaxonLinker can match taxa despite differences in spelling. In the case of very minor differences, the match is automatic. If the difference is more substantial, the user is provided with a list of most likely matches to choose from.
 
 Secondly, the imported data might make use of a different taxonomy. To deal with this, the dictionary can optionally include information on synonomy. This enables TaxonLinker to automatically link the data to the current name rather than the synonym.
 
-TaxonLinker works with csv text files, and the output file is simply a match between the taxon name in the input file, and the taxon name or taxon identifier in your database. The process of linking the related data is up to the user.
+Taxon Linker works with csv text files, and the output file is simply a match between the taxon name in the input file, and the taxon name or taxon identifier in your database. The process of linking the related data is up to the user.
 
 Installation
 ------------
 
-As mentioned, TaxonLinker needs a working Python installation to run. If you do not have Python on your system already, you can download it from http://www.python.org/download/releases/. If there are no other compelling reasons for choosing a particular version, the highest 2.7.x version is recommended. TaxonLinker should work in Python 2.7 and 2.6 (though it hasn't been tested in the latter). It will not work on 3.x without some simple modification.
+As mentioned, Taxon Linker needs a working Python installation to run. If you do not have Python on your system already, you can download it from http://www.python.org/download/releases/. If there are no other compelling reasons for choosing a particular version, the highest 2.7.x version is recommended. Taxon Linker should work in Python 2.7 and 2.6 (though it hasn't been tested in the latter). It will not work on 3.x without some simple modification.
 
-TaxonLinker does not need to be installed anywhere in particular, and will run quite happily from your Desktop, a USB drive or any other folder on your hard drive. Simply copy or unzip the files to a place of your liking, e.g. a `TaxonLinker` folder on your Desktop.
+Taxon Linker does not need to be installed anywhere in particular, and will run quite happily from your Desktop, a USB drive or any other folder on your hard drive. Simply copy or unzip the files to a place of your liking, e.g. a `TaxonLinker` folder on your Desktop.
 
 The basic configuration should be fine for most uses, but you can edit the options in settings.py file to better suit your requirements.
 
 Setting up your taxon dictionary
 --------------------------------
 
-TaxonLinker requires a taxon dictionary to match input names against. At a minimum this requires the set of names that your database knows about, or that you are interested in importing data for. The names should ideally be in the same format as those in the data that you are importing. For example, if the names in the imported data use the format *Genus species subsp. subspecies*, the matches will be more accurate if your data also includes '*subsp.*'.
+Taxon Linker requires a taxon dictionary to match input names against. At a minimum this requires the set of names that your database knows about, or that you are interested in importing data for. The names should ideally be in the same format as those in the data that you are importing. For example, if the names in the imported data use the format *Genus species subsp. subspecies*, the matches will be more accurate if your data also includes '*subsp.*'.
 
-Your dictionary file must be a text file in `csv format`_, preferably using tabs as field separators (although you can change this in `settings.py`). If the file is saved as `TaxonIndex.txt` in the `var` directory under `TaxonLinker`, it will be loaded automatically at startup. You can also load a dictionary using the `Load Dictionary` button while the program is running.
+Your dictionary file must be a text file in `csv format`_, preferably using tabs as field separators (although you can change this in `settings.py`). If the file is saved as `TaxonDictionary.txt` in the `var` directory under `TaxonLinker`, it will be loaded automatically at startup. You can also load a dictionary using the `Load Dictionary` button while the program is running.
 
-TaxonLinker uses the column headers to process the information in your dictionary file, so these need to be included as the first line of the file. TaxonLinker can handle `scientificName`, `taxonID`, `taxonomicStatus`, and `relatedResourceID` as field names, though only `scientificName` is required. These names are taken from the `Darwin Core`_ vocabulary for the purpose of interoperability.
+Taxon Linker uses the column headers to process the information in your dictionary file, so these need to be included as the first line of the file. Taxon Linker can handle `scientificName`, `taxonID`, `taxonomicStatus`, and `relatedResourceID` as field names, though only `scientificName` is required. These names are taken from the `Darwin Core`_ vocabulary for the purpose of interoperability.
 
 The following table shows a dictionary containing only `scientificName`:
 
@@ -70,12 +70,12 @@ Note that you can have multiple forms of a taxon name in your dictionary, if you
 +-----------------------------------------------------+-----------+
 | Anas undulata subsp. undulata                       |  151a     |
 +-----------------------------------------------------+-----------+
-| Anas undulata                                       |  151a     |
+| Anas undulata undulata                              |  151a     |
 +-----------------------------------------------------+-----------+
 | ...                                                 |  ...      |
 +-----------------------------------------------------+-----------+
 
-If you have information on the synonomy of your names, TaxonLinker can help you to link to the current name rather than a synonym. In order to achieve this, you need to use the `taxonomicStatus` and `relatedResourceID` fields. The `taxonID` field has been omitted in this example, but it will work just as well with it included. You would then have a `taxonID` entry in the `relatedResourceID` column instead of a `scientificName` as it is here. The `taxonomicStatus` field can contain entries of `valid`, `accepted` or `synonym`. Anything else (including blank entries) are assumed to be not current.
+If you have information on the synonomy of your names, Taxon Linker can help you to link to the current name rather than a synonym. In order to achieve this, you need to use the `taxonomicStatus` and `relatedResourceID` fields. The `taxonID` field has been omitted in this example, but it will work just as well with it included. You would then have a `taxonID` entry in the `relatedResourceID` column instead of a `scientificName` as it is here. The `taxonomicStatus` field can contain entries of `valid`, `accepted` or `synonym`. Anything else (including blank entries) are assumed to be not current.
 
 +-----------------------------+-------------------+----------------------+
 |       scientificName        |  taxonomicStatus  |  relatedResourceID   |
@@ -96,10 +96,10 @@ It's easiest to set up your dictionary in a spreadsheet (such as Microsoft Excel
 .. _csv format: http://en.wikipedia.org/wiki/Comma-separated_values
 .. _Darwin Core: http://rs.tdwg.org/dwc/terms/index.htm
 
-Using TaxonLinker
------------------
+Using Taxon Linker
+------------------
 
-To run TaxonLinker, you should be able to double-click the taxonlinker.py file in the `TaxonLinker` folder [1]_. This will load the program interface.
+To run Taxon Linker, you should be able to double-click the taxonlinker.py file in the `TaxonLinker` folder [1]_. This will load the program interface.
 
 Load Dictionary: 
     Use this button to load a different dictionary from the 
@@ -181,5 +181,6 @@ automatch.txt:
 
 Changes and license
 -------------------
-TaxonLinker is free software released under the terms of the MIT license available in the accompanying LICENSE file. The current version is 0.8.0. You can find a more detailed list of changes in the CHANGES file.
+
+Taxon Linker is free software released under the terms of the MIT license available in the accompanying LICENSE file. The current version is 0.8.0. You can find a more detailed list of changes in the CHANGES file.
 
