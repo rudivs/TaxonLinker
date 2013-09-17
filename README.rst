@@ -14,6 +14,10 @@ Installation
 
 As mentioned, Taxon Linker needs a working Python installation to run. If you do not have Python on your system already, you can download it from http://www.python.org/download/releases/. If there are no other compelling reasons for choosing a particular version, the highest 2.7.x version is recommended. Taxon Linker should work in Python 2.7 and 2.6 (though it hasn't been tested in the latter). It will not work on 3.x without some simple modification.
 
+If you install Python on Windows, you will need to set your %PATH% environment variable to include the directory of your Python distribution, delimited by a semicolon from other entries. To do this, right-click "My Computer" (usually located on your Desktop) and choose Properties there. Then, open the Advanced tab and click the Environment Variables button. Assuming you installed Python 2.7 using the default settings, add the following to the end of the current `%PATH%` environment variable:
+
+    ;C:\\Python27
+
 Taxon Linker does not need to be installed anywhere in particular, and will run quite happily from your Desktop, a USB drive or any other folder on your hard drive. Simply copy or unzip the files to a place of your liking, e.g. a `TaxonLinker` folder on your Desktop.
 
 The basic configuration should be fine for most uses, but you can edit the options in settings.py file to better suit your requirements.
